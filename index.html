@@ -1,307 +1,535 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Open When… From Me to You 💌</title>
-  <style>
-    :root {
-      --bg: #fff6f9;
-      --fg: #262626;
-      --accent: #ff5982;
-      --card: #ffffff;
-      --soft: #ffd9e6;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, var(--bg), #fff);
-      color: var(--fg);
-    }
-    header {
-      padding: 56px 20px 24px;
-      text-align: center;
-      background:
-        radial-gradient(900px 300px at 50% -80px, var(--soft), transparent);
-    }
-    h1 { margin: 0; font-size: clamp(28px, 6vw, 44px); }
-    p.lead {
-      margin: 10px auto 0; max-width: 680px; opacity: 0.9;
-      font-size: clamp(15px, 2.4vw, 18px);
-    }
-    main { max-width: 980px; margin: 0 auto; padding: 28px 20px 60px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1 Year Monique ❤️</title>
 
-    .grid {
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      margin-top: 18px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-      cursor: pointer;
-      position: relative;
-      transition: transform 0.15s ease, box-shadow 0.3s ease;
-      min-height: 120px;
-      display: flex; align-items: center; justify-content: center; text-align: center;
-    }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.1); }
-    .card h3 { margin: 0; font-size: 18px; }
-    .ribbon {
-      position: absolute; top: 12px; left: 12px;
-      background: var(--accent); color: #fff;
-      padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
-      box-shadow: 0 6px 16px rgba(255, 89, 130, 0.35);
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed; inset: 0; display: none;
-      background: rgba(0,0,0,0.5);
-      align-items: center; justify-content: center; padding: 16px;
-      z-index: 50;
-    }
-    .modal.open { display: flex; }
-    .sheet {
-      width: min(720px, 100%);
-      background: #fff; border-radius: 16px;
-      padding: 20px 20px 16px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
-      position: relative;
-    }
-    .sheet h2 { margin: 0 0 6px; font-size: 22px; }
-    .sheet p { line-height: 1.6; margin: 10px 0; }
-    .sheet .tag { color: #666; font-size: 13px; }
-    .close {
-      position: absolute; right: 12px; top: 10px;
-      background: #f5f5f5; border: none; border-radius: 10px;
-      padding: 8px 10px; cursor: pointer; font-weight: 700;
-    }
-    .actions {
-      display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap;
-    }
-    .btn {
-      background: var(--accent); color: white; border: none;
-      padding: 10px 14px; border-radius: 10px; cursor: pointer; font-weight: 700;
-      box-shadow: 0 8px 20px rgba(255, 89, 130, 0.3);
-    }
-    .note {
-      background: #fff8fb; border: 1px dashed var(--soft);
-      padding: 12px; border-radius: 12px; margin: 12px 0;
-    }
-    footer { text-align: center; color: #666; padding: 28px 16px 46px; }
-    .tiny { font-size: 12px; color: #777; }
-
-    /* Confetti dots */
-    .dot { position: fixed; width: 8px; height: 8px; border-radius: 50%; pointer-events: none; }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Open When… 💌</h1>
-    <p class="lead">
-      A year of us, and all the little ways I want to be there for you. Open one when it fits the moment.
+
+
+<section class="hero">
+
+    <h1 id="heroTitle"></h1>
+
+    <p class="date">
+        June 16, 2025 → June 16, 2026
     </p>
-  </header>
 
-  <main>
-    <div class="grid" id="cards">
-      <div class="card" data-key="smile">
-        <span class="ribbon">🙂</span>
-        <h3>Open when you need a smile</h3>
-      </div>
-      <div class="card" data-key="cantSleep">
-        <span class="ribbon">🌙</span>
-        <h3>Open when you can’t sleep</h3>
-      </div>
-      <div class="card" data-key="sad">
-        <span class="ribbon">💗</span>
-        <h3>Open when you’re feeling sad</h3>
-      </div>
-      <div class="card" data-key="missMe">
-        <span class="ribbon">📬</span>
-        <h3>Open when you miss me</h3>
-      </div>
-      <div class="card" data-key="anniversary">
-        <span class="ribbon">🎉</span>
-        <h3>Open on our anniversary</h3>
-      </div>
-      <div class="card" data-key="random">
-        <span class="ribbon">❓</span>
-        <h3>Open when you want a surprise</h3>
-      </div>
+<p class="subtitle">
+365 days. A lot of laughs. A lot of late nights.
+A lot of memories. Somehow we're still here.
+</p>
+
+<div class="card counter-card">
+
+<h3>❤️ Time Together ❤️</h3>
+
+<p id="loveCounter"></p>
+
+</div>
+
+    <button id="startBtn">
+        Begin Our Story
+    </button>
+
+</section>
+
+<section id="story" class="section">
+
+    <h2>How It All Started</h2>
+
+    <div class="card center-card">
+        <h3>"oh you go gym here?"</h3>
+
+        <p>
+            One of the most brainded thing i have ever said to anyone
+            started all of this.
+        </p>
+
+        <p>
+            I had absolutely no idea that the girl from the building gym
+            would become my favorite person.
+        </p>
     </div>
-  </main>
 
-  <div class="modal" id="modal">
-    <div class="sheet">
-      <button class="close" id="closeBtn" aria-label="Close">Close ✕</button>
-      <h2 id="modalTitle"></h2>
-      <div class="tag" id="modalTag"></div>
-      <div class="note" id="modalBody"></div>
-      <div class="actions" id="modalActions"></div>
-      <p class="tiny">This page is just for you. Love, me.</p>
+    <div class="card center-card">
+        <h3>The First Walk</h3>
+
+        <p>
+            We went out after.
+            We were both kinda awkward.
+            Then we sat down
+            started opening up and somehow
+            we sat at the starbucks for hours
+        </p>
     </div>
-  </div>
 
-  <footer>
-    Made with love and late-night coding. 💖
-  </footer>
+    <div class="card center-card">
+        <h3>The Frog 🐸</h3>
 
-  <script>
-    // Personalize these messages and links.
-    const MESSAGES = {
-      smile: {
-        title: "A little smile for right now",
-        tag: "I love your smile.",
-        html: `
-          <p>Hey love, take a deep breath with me—inhale 4, hold 4, exhale 6. Better?</p>
-          <p>Three quick reasons you made today brighter:</p>
-          <ul>
-            <li>Your laugh is my favorite sound.</li>
-            <li>The way you care about people inspires me.</li>
-            <li>You make ordinary moments feel special.</li>
-          </ul>
-          <p><em>Mini memory:</em> That time we shared fries and couldn’t stop giggling at the silly song in the cafe.</p>
-        `,
-        actions: [
-          { label: "Play our song", href: "[open.spotify.com](https://open.spotify.com/)" },
-          { label: "Random compliment", onClick: randomCompliment }
-        ]
-      },
-      cantSleep: {
-        title: "For the late-night thoughts",
-        tag: "I’m here, even when it’s quiet.",
-        html: `
-          <p>Close your eyes. Imagine us under a soft blanket, the room dim, the rain tapping the window.</p>
-          <p>Here’s a gentle note: it’s okay to rest. The world can wait. I’ll be here in the morning.</p>
-          <p><em>Try this:</em> count 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste.</p>
-        `,
-        actions: [
-          { label: "Sleepy playlist", href: "[youtube.com](https://www.youtube.com/results?search_query=sleep+lofi)" }
-        ]
-      },
-      sad: {
-        title: "When you’re feeling low",
-        tag: "You’re allowed to feel it.",
-        html: `
-          <p>I wish I could hug you right now. Since this is what I can do, here’s a written hug.</p>
-          <p>You don’t have to carry everything alone. I’m one call away. Always.</p>
-          <p><em>Memory:</em> The rainy walk where we shared one umbrella and laughed at the puddles. We got through that storm together, too.</p>
-        `,
-        actions: [
-          { label: "Message me now", href: "sms:+0000000000" }
-        ]
-      },
-      missMe: {
-        title: "When you miss me",
-        tag: "I miss you too.",
-        html: `
-          <p>Look at the picture in your head of my goofy grin. Got it? Good. That’s me, right there with you.</p>
-          <p>Let’s plan our next little adventure—park date with snacks and your favorite drink.</p>
-          <p>Until then, here’s one promise: I’ll keep choosing you, every day.</p>
-        `,
-        actions: [
-          { label: "Our shared album", href: "#" }
-        ]
-      },
-      anniversary: {
-        title: "Happy one year, my love 🎉",
-        tag: "365 days of us.",
-        html: `
-          <p>One year ago, I didn’t know a simple hello would become my favorite part of life.</p>
-          <p>Thank you for your patience, your light, and the way you make every day feel a little more like home.</p>
-          <p>Here’s to many more tiny joys, long talks, and holding hands through everything that comes.</p>
-        `,
-        actions: [
-          { label: "Celebrate 🎊", onClick: confetti }
-        ]
-      },
-      random: {
-        title: "Surprise note",
-        tag: "Because why not?",
-        html: `
-          <p>You deserve small celebrations on ordinary days.</p>
-          <p>Here’s a secret mission: send me the first emoji you think of and I’ll plan a mini date based on it.</p>
-        `,
-        actions: [
-          { label: "Another surprise", onClick: randomCompliment }
-        ]
-      }
-    };
+        <p>
+            I still remember us walking back at
+            like 2 or 3 of the morning
+            and you getting scared by some random frog noise.
+        </p>
 
-    // Hook up cards to modal
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalTag = document.getElementById('modalTag');
-    const modalBody = document.getElementById('modalBody');
-    const modalActions = document.getElementById('modalActions');
-    document.getElementById('closeBtn').addEventListener('click', () => modal.classList.remove('open'));
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+        <p>
+            One of my favorite memories.
+        </p>
+    </div>
+    <div class="card center-card">
 
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => openKey(card.dataset.key));
-    });
+    <h3>The Pasta 🍝</h3>
 
-    function openKey(key) {
-      const data = MESSAGES[key];
-      if (!data) return;
-      modalTitle.textContent = data.title;
-      modalTag.textContent = data.tag || "";
-      modalBody.innerHTML = data.html;
-      modalActions.innerHTML = "";
-      (data.actions || []).forEach(a => {
-        const btn = document.createElement('button');
-        btn.className = 'btn';
-        btn.textContent = a.label;
-        if (a.href) { btn.onclick = () => window.open(a.href, '_blank'); }
-        if (a.onClick) { btn.onclick = a.onClick; }
-        modalActions.appendChild(btn);
-      });
-      modal.classList.add('open');
-    }
+    <p>
+        Though we have a lot of memories but my favorate one you would never guesss.
+    </p>
 
-    // Compliments rotation
-    const COMPLIMENTS = [
-      "Your laugh is my favorite soundtrack.",
-      "You make ordinary moments feel like scenes from a movie.",
-      "Your kindness stays with people (including me).",
-      "I learn something from you every week.",
-      "You have the best smile. I mean it."
-    ];
-    function randomCompliment() {
-      alert(COMPLIMENTS[Math.floor(Math.random() * COMPLIMENTS.length)]);
-    }
+    <p>
+        It was us trying to cook together.
+    </p>
 
-    // Simple confetti without libraries
-    function confetti() {
-      const colors = ["#ff5982","#ffd166","#4cc9f0","#06d6a0","#b5179e"];
-      const count = 160, duration = 1200, start = Date.now();
-      (function frame() {
-        const t = Date.now() - start;
-        if (t > duration) return;
-        for (let i = 0; i < 8; i++) {
-          const d = document.createElement('div');
-          d.className = 'dot';
-          d.style.left = (Math.random() * 100) + 'vw';
-          d.style.top = '-10px';
-          const s = Math.random() * 6 + 6;
-          d.style.width = s + 'px'; d.style.height = s + 'px';
-          d.style.background = colors[(Math.random()*colors.length)|0];
-          document.body.appendChild(d);
-          const fall = (Math.random()*700)+600;
-          const drift = (Math.random()*200)-100;
-          d.animate([
-            { transform: 'translate(0, 0)', opacity: 1 },
-            { transform: 'translate(' + drift + 'px,' + fall + 'px) rotate(' + (Math.random()*720) + 'deg)', opacity: 0.9 }
-          ], { duration: fall + 400, easing: 'ease-in' }).onfinish = () => d.remove();
-        }
-        requestAnimationFrame(frame);
-      })();
-    }
-  </script>
+    <p>
+        We made some random creamy pasta with chicken,
+        broccoli and mushrooms.
+    </p>
+
+    <p>
+        I don't even remember what it was supposed to be called.
+    </p>
+
+    <p>
+        I just remember making it with you,
+        eating it together,
+        and watching a movie afterwards.
+    </p>
+
+    <p>
+        Looking back,
+        our cooking times are still some of my favorite memories.
+    </p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+    <h2>Relationship Statistics™</h2>
+
+    <div class="card">
+        <p>Days Together: 365</p>
+        <p>Hoodies Stolen: 1</p>
+        <p>Hoodies Returned: 0</p>
+        <p>ID Cards Returned: 0</p>
+        <p>Food Fed To Me: Infinite</p>
+        <p>Times You Tried To Touch Me: Every Opportunity</p>
+        <p>Amount of Hummus eaten: WAY TOO MUCH</p>
+        <p>Times I Counted Coins Before Buying Water: At Least Once</p>
+        
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2> Sugar Mama Analytics™</h2>
+
+    <div class="card">
+
+        <p>AirPods: Funded ✅</p>
+        <p>Shoes: Funded ✅</p>
+        <p>Clothes: Funded ✅</p>
+        <p>Protein: Funded ✅</p>
+        <p>Boyfriend: Funded ✅</p>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2>Achievement Board 🏆</h2>
+
+    <div class="card">
+
+        <p>🏆 Hoodie Thief</p>
+        <p>🏆 Professional Food Feeder</p>
+        <p>🏆 Certified Sugar Mommy</p>
+        <p>🏆 Frog Encounter Survivor</p>
+        <p>🏆 Taking pics of me</p>
+        <p>🏆 Stayed After THE 5 Seconds -_-</p>
+        <p>🏆 Hummus with oil & pita eater</p>
+        <p>🏆 Sitting on my lap always</p>
+        <p>🏆 Touching Me World Record Holder</p>
+        <p>🏆 Provider Of AirPods</p>
+        <p>🏆 Provider Of Shoes</p>
+        <p>🏆 Provider Of Protein</p>
+        <p>🏆 Provider Of my daily clothes</p>
+        <p>🏆 Survived Ahmad's Cooking</p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>Photo Gallery 📸</h2>
+
+    <div class="gallery">
+
+    <div class="memory-card">
+        <img src="photos/photo1.jpg">
+        <p>W picture, i think its a nice picture we were out somewhere ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo2.jpg">
+        <p>After the sneak in was done we took a pic and it was probably our first kiss pic ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo3.jpg">
+        <p>Such a cute pic us sitting probably on some bench together, super cute ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo4.jpg">
+        <p>Us in your bed the start of part two in your bed i still remember it ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo5.jpg">
+        <p>Us somewhere probably either ur or my room and just chillin cute cute ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo6.jpg">
+        <p>I just saw this picture i took a while back from the end of part two and we were looking at eachother i find it really cute ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo7.jpg">
+        <p>My Asian baddie ❤️❤️❤️ KEEP GOING GYMMMM WUV U ❤️</p>
+    </div>
+
+    <div class="memory-card">
+        <img src="photos/photo8.jpg">
+        <p>FATTY CUTIEE ❤️❤️❤️ I DUNNO I REALLY LIKE THIS PIC OF YOU</p>
+    </div>
+
+
+
+</div>
+
+    </div>
+</section>
+<section class="section">
+
+    <h2>Things That Remind Me Of You ❤️</h2>
+
+    <div class="card">
+
+        <p>🥙 Hummus + Olive Oil + Pita Bread</p>
+
+        <p>🎵 You Belong With Me</p>
+
+        <p>🎧 My AirPods</p>
+
+        <p>👟 My Shoes</p>
+
+        <p>👕 Half My Clothes</p>
+
+        <p>💪 My Protein</p>
+
+        <p>❤️ First thing on my mind uuu</p>
+
+        <p>🥹 Every Time I Think About You And Randomly Smile</p>
+
+    </div>
+
+</section>
+
+</section>
+
+<section class="section">
+
+    <h2>What I'm Proud Of</h2>
+
+    <div class="card center-card">
+
+        <p>
+            One thing I'll always be proud of is how muhc you have been through and still here after it.
+        </p>
+
+        <p>
+            I've seen how much you've had to deal with.
+            Family stuff.
+            School.
+            Life.
+        </p>
+
+        <p>
+            And somehow every day you still keep trying.
+        </p>
+
+        <p>
+            Going gym.
+            Taking care of yourself.
+            Taking care of your skin.
+            Taking care of your hair.
+            Trying to make money.
+            AND MORE.
+        </p>
+
+        <p>
+            Seeing how much you've changed in a good way this year
+            makes me really proud of you. I really mean it.
+        </p>
+
+    </div>
+
+</section>
+<section class="section">
+
+<h2> 10 Things I Love About You ❤️</h2>
+
+<div class="card">
+
+<p>1. Your laugh</p>
+<p>2. Your smile</p>
+<p>3. How caring you are</p>
+<p>4. How you make me happy</p>
+<p>5. How you always try your best</p>
+<p>6. You push me to be better</p>
+<p>7. How you support me</p>
+<p>8. How comfortable I am around you</p>
+<p>9. How you always know what to say to me</p>
+<p>10. How easily you forgive me for small things</p>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2>Countdown To Year 2 ❤️</h2>
+
+<div class="card center-card">
+
+    <p id="year2Counter" class="countdown"></p>
+
+    <br>
+
+    <p>
+        Current Relationship Status:
+        Still together ❤️
+    </p>
+
+</div>
+
+</section>
+<section class="section">
+<section class="section">
+
+    <h2>Reasons I Love You ❤️</h2>
+
+    <div class="card random-love-card">
+
+        <button id="loveBtn">
+            Click For A Random Reason ❤️
+        </button>
+
+        <p id="loveReason">
+            Press the button ❤️
+        </p>
+
+    </div>
+
+</section>
+    <h2>Final Letter ❤️</h2>
+
+    <div class="card center-card">
+
+        <p>
+            Thank you for every late night.
+        </p>
+
+        <p>
+            Every argument.
+        </p>
+
+        <p>
+            Every laugh.
+        </p>
+
+        <p>
+            Every meal.
+        </p>
+        
+        <p>
+            Every gift.
+        </p>
+
+        <p>
+            Every movie.
+        </p>
+
+        <p>
+            Every memory.
+        </p>
+
+        <p>
+            And thank you for making this the best year of my life.
+        </p>
+
+        <p>
+            I love you baby.
+        </p>
+
+        <p>
+            Happy One Year ❤️
+        </p>
+
+        <p>
+            - Ahmad
+        </p>
+
+        <hr>
+
+        <p>
+            JUST LETTING YOU KNOWW....  I still haven't gotten my school ID cards back.
+        </p>
+
+    </div>
+
+</section>
+<audio id="bgMusic" loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+<div id="floatingHeart">
+    ❤️
+</div>
+<div id="floatingDog">
+    🐶
+</div>
+
+<div id="floatingDonut">
+    🍩
+</div>
+
+<div id="secretPopup" class="secret-popup">
+
+    <div class="secret-content">
+
+        <span id="closeSecret">✖</span>
+
+        <h2>Mission Impossible ❤️</h2>
+
+        <p>Day 3 or 4.</p>
+
+        <p>Somehow we thought sneaking you into my place
+        was a good idea.</p>
+
+        <p>We spent the entire time trying not to get caught.</p>
+
+        <p>Looking back now, I think what I remember most
+        is how comfortable we got around each other so quickly.</p>
+
+        <p> Still crazy you taught me how to makeout</p>
+        <p> Still crazy you gave me head after 3 days</p>
+        <p> Still crazy you still stayed with me through this time</p>
+        <p> I wuvv youu</p>
+
+    </div>
+
+</div>
+
+
+
+<div id="dogPopup" class="secret-popup">
+
+    <div class="secret-content">
+
+        <span id="closeDog">✖</span>
+
+        <h2>🐶 Awkward first time</h2>
+
+        <p>We sat there for a few seconds.</p>
+
+        <p>You: "Why did you stop"</p>
+
+        <p>Me: "I think i finished"</p>
+
+        <p>You: "What? but that was just 5 seconds"</p>
+
+        <p> Me: "I knowwww stoppp it was my first timee"</p>
+
+        <p>You: "Can we do it again? Like right now"</p>
+
+        <p>Me: "I cant i just finished"</p>
+
+        <p>and to this day you still remind me.</p>
+
+        <p>BUT STILL you stayed after the 5 seconds</p>
+
+    </div>
+
+</div>
+
+
+
+<div id="donutPopup" class="secret-popup">
+
+    <div class="secret-content">
+
+        <span id="closeDonut">✖</span>
+
+        <h2>🍩 Stuff eaten from ON IT</h2>
+
+        <p>🍩 Donuts</p>
+
+        <p>🍫 Nutella</p>
+
+        <p>🍦 Ice Cream</p>
+
+        <p>🍬 Sour Strips</p>
+
+        <p>🍪 Random Sweets</p>
+
+        <p>🍫 Nutella</p>
+
+        <br>
+
+        <p>Monique's Goal:</p>
+
+        <p> Lick anything and everything from on it.</p>
+
+        <br>
+
+        <p>Current Progress: A FEW STUFF MAYBE MORE COMING 👀</p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+<section class="section panel" id="final-message">
+  <h2>For You</h2>
+  <p style="font-size:1.1rem; line-height:1.8; text-align:center;">
+    I hope you liked my gift.<br>
+    I'm sorry I couldn't buy something big,<br>
+    but I made this with all my heart for you. ❤️
+  </p>
+
+  <p style="text-align:center; margin-top:20px; color:#777;">
+    Also, when you're done with everything else, open the big moving heart, the dog, and the donut too.
+  </p>
+</section>
+
 </body>
 </html>
