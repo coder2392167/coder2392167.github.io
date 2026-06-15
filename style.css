@@ -400,3 +400,40 @@ hr{
     min-height:50px;
     transition:.3s;
 }
+
+#passwordScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 999999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#passwordScreen h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#passwordScreen input {
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#passwordScreen button {
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#error {
+    color: pink;
+    margin-top: 10px;
+}
