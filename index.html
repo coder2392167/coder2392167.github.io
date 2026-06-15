@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<div id="passwordScreen">
+  <h2>Enter Password ❤️</h2>
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+  <p id="error"></p>
+</div>
+
+<div id="mainContent" style="display:none;">
+  <!-- Your entire website content goes here -->
+  <h1>Happy Anniversary ❤️</h1>
+</div>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -530,6 +542,17 @@ A lot of memories. Somehow we're still here.
     Also, when you're done with everything else, open the big moving heart, the dog, and the donut too.
   </p>
 </section>
+<script>
+function checkPassword() {
+  const password = document.getElementById("passwordInput").value;
 
+  if (password === "ourspecialday") {
+    document.getElementById("passwordScreen").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  } else {
+    document.getElementById("error").textContent = "Wrong password ❤️";
+  }
+}
+</script>
 </body>
 </html>
